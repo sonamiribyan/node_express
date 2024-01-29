@@ -41,7 +41,7 @@ class UserController {
     }
     async auth(req, res) {
         const jwt = generateJwt(req.user.id, req.user.email, req.user.role);
-        return res.json({jwt});
+        return res.json({ jwt });
     }
 }
 

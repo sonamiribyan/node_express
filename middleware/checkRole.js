@@ -12,8 +12,7 @@ export default function (role) {
                 return res.status(401).json({ message: "user is unauthenticated" }); // Fix typo in 'unauthenticated'
             }
             const decoded = JWt.verify(token, process.env.SECRET_KEY);
-            if(decoded.role !== role)
-            {
+            if (decoded.role !== role) {
                 return res.status(401).json({ message: "not allowed" }); // Fix typo in 'unauthenticated'
             }
             req.user = decoded;
